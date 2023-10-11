@@ -1,5 +1,6 @@
 FROM --platform=amd64 gcc
 RUN apt update && apt upgrade -y
+RUN apt install -y git
 #RUN apt install -y openssh-server
 #RUN mkdir /var/run/sshd
 #RUN echo "root:root" | chpasswd
