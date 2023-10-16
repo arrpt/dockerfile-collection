@@ -7,12 +7,19 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build the C-CPP image
+      run: docker build . --file c-cpp/Dockerfile --tag c-cpp:latest
+    - name: Build the java image
+      run: docker build . --file java/Dockerfile --tag java:latest
+    - name: Build the kali image
+      run: docker build . --file kali/Dockerfile --tag kali:latest
+    - name: Build the python image
+      run: docker build . --file python/Dockerfile --tag python:latest
+    - name: Build the rust image
+      run: docker build . --file rust/Dockerfile --tag rust:latest
