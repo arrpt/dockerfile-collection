@@ -1,5 +1,5 @@
 name: Docker Image CI
-
+d
 on:
   push:
     branches: [ "main" ]
@@ -17,9 +17,9 @@ jobs:
       run: docker build . --file c-cpp/Dockerfile --tag c-cpp:latest
     - name: Build the java image
       run: docker build . --file java/Dockerfile --tag java:latest
-    - name: Build the kali image
-      run: docker build . --file kali/Dockerfile --tag kali:latest
     - name: Build the python image
       run: docker build . --file python/Dockerfile --tag python:latest
     - name: Build the rust image
       run: docker build . --file rust/Dockerfile --tag rust:latest
+    - name: Build the kali image
+      run: docker build . --file kali/Dockerfile --tag kali:latest

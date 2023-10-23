@@ -1,9 +1,0 @@
-services:
-  c-cpp:
-    build: ./c-cpp/
-    ports:
-      - "8000:22"
-  java:
-    build: ./java/
-    ports:
-      - "8001:22"
