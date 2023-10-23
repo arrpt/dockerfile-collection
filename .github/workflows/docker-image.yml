@@ -1,5 +1,4 @@
-name: Docker Image CI
-d
+name: Docker Image CIf
 on:
   push:
     branches: [ "main" ]
